@@ -1,0 +1,41 @@
+[
+    {
+        "id": "1",
+        "firstName": "Rodrigo",
+        "lastName": "Fuenzalida",
+        "email": "rodrigofuenzalida@gmail.com",
+        "password": "pass1",
+        "category":"Admin",
+        "image": ""
+    },
+
+    {
+        "id": "2",
+        "firstName": "Bruno",
+        "lastName": "Grieco",
+        "email": "brunogrieco@gmail.com",
+        "password": "pass2",
+        "category":"Admin",
+        "image": ""
+    },
+
+    {
+        "id": "3",
+        "firstName": "Lucas",
+        "lastName": "Rivas",
+        "email": "lucasrivas@gmail.com",
+        "password": "pass3",
+        "category":"Admin",
+        "image": ""
+    },
+
+    {
+        "id": "4",
+        "firstName": "Patricio",
+        "lastName": "Constantino",
+        "email": "patricioconstantino@gmail.com",
+        "password": "pass4",
+        "category":"Admin",
+        "image": ""
+    }
+]
