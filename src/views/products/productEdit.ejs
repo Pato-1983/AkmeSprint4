@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<!-- Head -->
+<%- include('../partials/head.ejs') %> 
+
+<body>
+
+    <!-- Header -->
+    <%- include('../partials/header.ejs') %> 
+
+    <main class="main-productEdit">
+        
+        <h3 class="register-title">Edicion de producto</h3>        
+    
+        <form class="productEdit-form" action="/productEdit" method="GET">
+            
+            
+            <div class="form-div">
+                <label for="idProducto" class="form-label">ID</label>
+                <input type="text" name="idProducto" id="idProducto" required>
+            </div>
+
+            <div class="form-div">
+                <label for="nombreProducto" class="form-label">Nombre del producto</label>
+                <input type="text" name="nombreProducto" id="nombreProducto" required>
+            </div>   
+            
+            <div class="form-div">
+                <label for="descripcionProducto" class="form-label">Descripción</label>
+                <input type="text" name="descripcionProducto" id="descripcionProducto" required>
+            </div>               
+        
+            <div class="form-div">
+                <label for="precioProducto" class="form-label">Precio</label>
+                <input type="text" name="precioProducto" id="precioProducto" required>
+            </div>  
+            
+            <div class="form-div">
+                <label>Seleccionar imagen</label>
+                <input type="file" name="imagenProducto" accept="jpg, png">
+            </div>
+
+            
+            <div class="form-div"></div>
+                <label>Seleccione categoria</label>
+                <select name="Categoria" id="">
+                    <option value="Protección respiratoria">Protección respiratoria</option>
+                    <option value="Detectores de gases">Detectores de gases</option>
+                    <option value="EPP indumentaria">EPP indumentaria</option>
+                </select>
+            </div>
+
+            <div class="form-div">
+                <label for="colorProducto" class="form-label">Color</label>
+                <input type="text" name="colorProducto" id="colorProducto" required>
+            </div>
+
+            <div class="form-div">
+                <label for="descuentoProducto" class="form-label">Descuento</label>
+                <input type="number" name="descuentoProducto" id="descuentoProducto" required>
+            </div>
+
+            <div class="form-buttons">
+                <button type="submit" class="submit-button">Guardar cambios</button>
+            </div>
+    
+        </form>
+    
+    </main>
+
+    <!-- Footer -->
+    <%- include('../partials/footer.ejs') %> 
+    
+</body>
+</html>

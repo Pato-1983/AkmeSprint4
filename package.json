@@ -1,0 +1,20 @@
+{
+  "name": "akmesafetysprint3",
+  "version": "1.0.0",
+  "main": "/main/index.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://https://github.com/Pato-1983/Akme_Safety_Sprint3/issues"
+  },
+  "homepage": "https://https://github.com/Pato-1983/Akme_Safety_Sprint3#readme",
+  "dependencies": {
+    "ejs": "^3.1.8",
+    "express": "^4.18.1"
+  },
+  "description": ""
+}
