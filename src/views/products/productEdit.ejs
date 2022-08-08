@@ -12,27 +12,25 @@
         
         <h3 class="register-title">Edicion de producto</h3>        
     
-        <form class="productEdit-form" action="/productEdit" method="GET">
-            
-            
+        <form class="productEdit-form" action="/products/edit/<%= product.id %>?_method=PUT"  method="POST">       
             <div class="form-div">
                 <label for="idProducto" class="form-label">ID</label>
-                <input type="text" name="idProducto" id="idProducto" required>
+                <input type="text" name="idProducto" id="idProducto" required value= "<%= product.id %>">
             </div>
 
             <div class="form-div">
                 <label for="nombreProducto" class="form-label">Nombre del producto</label>
-                <input type="text" name="nombreProducto" id="nombreProducto" required>
+                <input type="text" name="nombreProducto" id="nombreProducto" value= "<%= product.name %>" required>
             </div>   
             
             <div class="form-div">
                 <label for="descripcionProducto" class="form-label">Descripción</label>
-                <input type="text" name="descripcionProducto" id="descripcionProducto" required>
+                <input type="text" name="descripcionProducto" id="descripcionProducto" value= "<%= product.description %>" required>
             </div>               
         
             <div class="form-div">
                 <label for="precioProducto" class="form-label">Precio</label>
-                <input type="text" name="precioProducto" id="precioProducto" required>
+                <input type="text" name="precioProducto" id="precioProducto" value= "<%= product.price %>" required>
             </div>  
             
             <div class="form-div">
@@ -44,20 +42,21 @@
             <div class="form-div"></div>
                 <label>Seleccione categoria</label>
                 <select name="Categoria" id="">
-                    <option value="Protección respiratoria">Protección respiratoria</option>
-                    <option value="Detectores de gases">Detectores de gases</option>
-                    <option value="EPP indumentaria">EPP indumentaria</option>
+                    <option value="Protectores respiratorios" <%= product.category == "Proteccion respiratoria" ? "selected" : "" %>> Proteccion respiratoria </option>
+                    <option value="Detectores de gases" <%= product.category == "Detectores de gases" ? "selected" : "" %>> Detectores de gases </option>
+                    <option value="EPP indumentaria" <%= product.category == "EPP indumentaria" ? "selected" : "" %>>EPP indumentaria</option>
+                    <option value="Protectores auditivos" <%= product.category == "Protectores auditivos" ? "selected" : "" %>>Protectores auditivos</option>
                 </select>
             </div>
 
             <div class="form-div">
                 <label for="colorProducto" class="form-label">Color</label>
-                <input type="text" name="colorProducto" id="colorProducto" required>
+                <input type="text" name="colorProducto" id="colorProducto" value= "<%= product.color %>" required>
             </div>
 
             <div class="form-div">
                 <label for="descuentoProducto" class="form-label">Descuento</label>
-                <input type="number" name="descuentoProducto" id="descuentoProducto" required>
+                <input type="number" name="descuentoProducto" id="descuentoProducto" value= "<%= product.discount %>" required>
             </div>
 
             <div class="form-buttons">

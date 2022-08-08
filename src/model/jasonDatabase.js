@@ -25,7 +25,7 @@ const modelController = function (name) {
         },
         // Leo todos los registros del archivo
         all: function () {
-            
+
             return this.readFile();
         },
         // Busco por id
@@ -76,7 +76,7 @@ const modelController = function (name) {
 
         visited: function () {
             let rows = this.readFile();
-            
+
             const visitados = rows.filter(i => i.category == 'visited')
             return visitados 
 
@@ -84,7 +84,7 @@ const modelController = function (name) {
 
         inSale: function () {
             let rows = this.readFile();
-  
+
             const enVenta = rows.filter(i => i.category == 'in-sale')
             return enVenta
 
@@ -92,7 +92,7 @@ const modelController = function (name) {
 
         findFirstByField: function(text){
             let rows = this.all();
-    
+
             let elementFound = rows.find(element => element.id == text);
             return elementFound;
         },
@@ -103,4 +103,6 @@ const modelController = function (name) {
             return allElementsFound;
         }
     }
-}
+} 
+
+module.exports = modelController
