@@ -1,13 +1,17 @@
 const fs = require('fs');
 const path = require('path');
-
+// Recibo por parámetro la entidad para reutilizarlo
 
 const modelController = function (name) {
+    console.log('entre al modelo de Mercado')
+    console.log(name)
+    console.log(path.resolve(__dirname, '../database/', `${name}.json`))
     return {
-        tablePath: path.resolve(__dirname, '../dataBase/', `${name}.json`),
+        tablePath: path.resolve(__dirname, '../database/', `${name}.json`),
 
         // Leo el archivo Json y lo transformo en Array de objeto literal     
         readFile: function () {
+            console.log('Leo el archivo')
             let tableContents = fs.readFileSync(this.tablePath, 'utf-8');
             return JSON.parse(tableContents) || [];
         },
@@ -25,12 +29,13 @@ const modelController = function (name) {
         },
         // Leo todos los registros del archivo
         all: function () {
-
+            
             return this.readFile();
         },
         // Busco por id
         find: function (id) {
             let rows = this.readFile();
+            console.log(" --- por el find")
             return rows.find(i => i.id == id);
         },
 
@@ -58,6 +63,7 @@ const modelController = function (name) {
                 return oneRow;
             });
             // escribo el archivo
+       //     console.log(updatedRows)
             this.writeFile(updatedRows);
 
             return row.id;
@@ -66,6 +72,7 @@ const modelController = function (name) {
         // Elimino el registro en el archivo según un id    
         delete: function (id) {
 
+            console.log('Elimino :' + id)
             let rows = this.readFile();
             let updatedRows = rows.filter(row => {
                 return row.id != id;
@@ -74,25 +81,41 @@ const modelController = function (name) {
             this.writeFile(updatedRows);
         },
 
+        table: function () {
+            let rows = this.readFile();
+            console.log(" --- filtro los visitados")
+            
+            const table = rows.filter(i => i.category == 'table')
+            console.log(" --- ESTOY ----------------------")
+       //     console.log(visitados)
+            return table 
+
+        },
         visited: function () {
             let rows = this.readFile();
-
+            console.log(" --- filtro los visitados")
+            
             const visitados = rows.filter(i => i.category == 'visited')
+            console.log(" --- ESTOY ----------------------")
+       //     console.log(visitados)
             return visitados 
 
         },
 
         inSale: function () {
             let rows = this.readFile();
-
+            console.log(" --- filtro los que están para venta")
+  
             const enVenta = rows.filter(i => i.category == 'in-sale')
+            console.log(" --- ESTOY EN VENTA--------------------")
+     //       console.log(enVenta)
             return enVenta
 
         },
 
         findFirstByField: function(text){
             let rows = this.all();
-
+    
             let elementFound = rows.find(element => element.id == text);
             return elementFound;
         },
@@ -101,8 +124,12 @@ const modelController = function (name) {
             let rows = this.all();
             let allElementsFound = rows.filter(element => element.estado == text);
             return allElementsFound;
-        }
+        },
+
+    
+
+
     }
-} 
+}
 
 module.exports = modelController

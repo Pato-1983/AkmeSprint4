@@ -13,36 +13,36 @@
         
         <h3 class="create-title">Crear Producto</h3>        
     
-        <form class="create-form" action="/login" method="GET">
+        <form class="create-form" action="/products/create" method="POST" enctype="multipart/form-data">
     
             <div class="form-div">
-                <label for="idProducto" class="form-label">ID</label>
-                <input type="text" name="idProducto" id="idProducto" required>
+                <label for="id" class="form-label">ID</label>
+                <input type="text" name="id" id="id" required>
             </div>
 
             <div class="form-div">
-                <label for="nombreProducto" class="form-label">Nombre del producto</label>
-                <input type="text" name="nombreProducto" id="nombreProducto" required>
+                <label for="name" class="form-label">Nombre del producto</label>
+                <input type="text" name="name" id="name" required>
             </div>   
             
             <div class="form-div">
-                <label for="descripcionProducto" class="form-label">Descripción</label>
-                <input type="text" name="descripcionProducto" id="descripcionProducto" required>
+                <label for="description" class="form-label">Descripción</label>
+                <input type="text" name="description" id="description" required>
             </div>               
         
             <div class="form-div">
-                <label for="precioProducto" class="form-label">Precio</label>
-                <input type="text" name="precioProducto" id="precioProducto" required>
+                <label for="price" class="form-label">Precio</label>
+                <input type="text" name="price" id="price" required>
             </div>  
             
             <div class="form-div">
                 <label>Seleccionar imagen</label>
-                <input type="file" name="imagenProducto" accept="jpg, png">
+                <input type="file" name="image" accept="jpg, png">
             </div>
             
             <div class="form-div"></div>
                 <label>Seleccione categoria</label>
-                <select name="Categoria" id="">
+                <select name="category" id="category">
                     <option value="Protección respiratoria">Protección respiratoria</option>
                     <option value="Detectores de gases">Detectores de gases</option>
                     <option value="EPP indumentaria">EPP indumentaria</option>
@@ -50,13 +50,13 @@
             </div>
 
             <div class="form-div">
-                <label for="colorProducto" class="form-label">Color</label>
-                <input type="text" name="colorProducto" id="colorProducto" required>
+                <label for="color" class="form-label">Color</label>
+                <input type="text" name="color" id="color" required>
             </div>
 
             <div class="form-div">
-                <label for="descuentoProducto" class="form-label">Descuento</label>
-                <input type="number" name="descuentoProducto" id="descuentoProducto" required>
+                <label for="discount" class="form-label">Descuento</label>
+                <input type="number" name="discount" id="discount" required>
             </div>
             
             <div class="form-buttons">
