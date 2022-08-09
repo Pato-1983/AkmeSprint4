@@ -3,15 +3,11 @@ const path = require('path');
 // Recibo por parámetro la entidad para reutilizarlo
 
 const modelController = function (name) {
-    console.log('entre al modelo de Mercado')
-    console.log(name)
-    console.log(path.resolve(__dirname, '../database/', `${name}.json`))
     return {
         tablePath: path.resolve(__dirname, '../database/', `${name}.json`),
 
         // Leo el archivo Json y lo transformo en Array de objeto literal     
         readFile: function () {
-            console.log('Leo el archivo')
             let tableContents = fs.readFileSync(this.tablePath, 'utf-8');
             return JSON.parse(tableContents) || [];
         },

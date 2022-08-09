@@ -14,7 +14,7 @@
         <section class="product-detail-info">
             <div class="product-detail-image">
                 <figure>
-                    <img src="/images/<%= product.image %>" width=250px alt="<%= product.name %>">
+                    <img src="/images/<%= product.image[0] %>" width=250px alt="<%= product.name %>">
                 </figure>
             </div>
 
@@ -29,6 +29,9 @@
                 <button type="submit" class="submit-button">Agregar al Carrito</button>
                 <button type="submit" class="submit-button">Volver al Listado</button>
                 <a href="/products/edit/<%= product.id %>"><button type="submit" class="submit-button">Editar Producto</button></a>
+                <form action="/products/delete/<%= product.id %>?_method=DELETE" method="POST">
+                    <button type="submit" class="submit-button">Eliminar Producto</button>
+                </form>
         </div>   
         
     </main>   

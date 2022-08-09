@@ -1,8 +1,8 @@
-//<!--requires-->
+
 const fs = require('fs');
 const path = require('path');
 
-//<!--lectura json-->
+
 const productsJSON = fs.readFileSync(path.resolve(__dirname, '../dataBase/products.json'), 'utf8');
 const products = JSON.parse(productsJSON);
 
@@ -14,9 +14,9 @@ controller = {
 
     index : (req,res) => {
         const products = productModel.readFile();
-        const highlight = products.filter(product => product.discount != 0);  
-        //highlight.splice(8);   
-        res.render('main/index',{highlight,toThousand});
+        const ofertas = products.filter(product => product.discount != 0);  
+          
+        res.render('main/index',{ofertas,toThousand});
     },
 
     contact: (req,res) => res.render('main/contact'),
